@@ -1,0 +1,65 @@
+/*  
+    Name:   William chambers
+    Student ID:  010672845
+    Email: wchambe2@go.olemiss.edu
+    Course Information: csci 111 section 3
+    Program Source File Name:  Project1
+    Programming Assignment:  #1 
+    Program Description: This program is used to calculate a bill for a hospital visit as well as how they are paying and where the bill should go
+    References: My lab codes that I made.https://study.com/academy/lesson/how-to-round-to-2-decimal-places-in-java.html for rounding.
+    Due Date:9/26/18	 
+ 
+   In keeping with the honor code policies of the University of Mississippi, the School of Engineering, and the Department of Computer and Information Science, I affirm that I have neither given nor received on this programming assignment. This assignment
+represents my individual, original effort.
+ ... My Signature is on File.
+         
+*/ 
+
+import java.util.Scanner;
+ public class Project1 
+{
+   public static void main(String[] args)
+   {
+ 
+
+       String name;
+       String Address;
+       String ModeofPayment; 
+       Double CostofVisit;
+       int BaseCost = 25;
+	   double TaxRate=.07;
+	   double Total;
+	   
+
+
+Scanner keyboard= new Scanner(System.in);
+
+System.out.println("AEHealth invoice");
+System.out.println("----------------");
+
+
+System.out.print("what is your name? ");
+name=keyboard.nextLine();
+
+
+ System.out.print("what is your Address? ");
+ Address=keyboard.nextLine();
+
+
+
+System.out.print("How are you paying(cash/credit/debit)? ");
+ModeofPayment=keyboard.nextLine();
+
+System.out.print("Cost of visit?  $");
+CostofVisit=keyboard.nextDouble();
+
+System.out.println("Base Fee $25");
+ 
+ double TaxAmount= Math.round((CostofVisit+BaseCost)*TaxRate*100.0)/100.0;
+ System.out.println("tax rate is 7%");
+ System.out.println("Tax amount $"+ TaxAmount);
+ Total= (CostofVisit+BaseCost+TaxAmount);
+ System.out.println("The total is $" +Total);
+    
+  }
+}
