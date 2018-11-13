@@ -1,0 +1,72 @@
+/*  
+    Name:   William chambers
+    Student ID:  010672845
+    Email: wchambe2@go.olemiss.edu
+    Course Information: csci 111 section 3
+    Program Source File Name:  Project1
+    Programming Assignment:  #3 
+    Program Description: This is a dice game to guess the correct number.
+    References:textbook previous projects.
+    Due Date:10/12/18	 
+ 
+   In keeping with the honor code policies of the University of Mississippi, the School of Engineering, and the Department of Computer and Information Science, I affirm that I have neither given nor received on this programming assignment. This assignment
+represents my individual, original effort.
+ ... My Signature is on File.
+         
+*/ 
+import java.util.Scanner;
+//import scanner
+import java.util.Random;
+//import random
+public class DiceGame
+	{
+	public static void main (String[]args)
+		{
+			String again2="die1";
+			int die1=0;
+			String again ="number";
+			int number=0;
+			System.out.println("let's start.");
+			System.out.println("Guess a number between 1 and 6 to simulate the throw of a dice.");
+			System.out.println("Enter -1 if you would like to quit.");
+			Scanner keyboard=new Scanner(System.in);
+			Random rand= new Random();
+			die1 = rand.nextInt(6)+1;
+			System.out.println("What is your guess?");
+			number = keyboard.nextInt();
+			//users first guest
+			int counter=0;
+			while(number != -1 && number != die1)
+				// start of the while loop
+			{
+				//start of the if else statement
+				if (number > die1)
+				{
+					System.out.println("The number is to high.");
+					System.out.println("Guess again");
+					number=keyboard.nextInt();
+					counter++;
+				}
+				else if(number <die1)
+				{
+					System.out.println("The number is to low.");
+					System.out.println("Guess again");
+					number=keyboard.nextInt();
+					counter++;
+				}
+			}
+			
+			System.out.println("Congrats! you nailed it.");
+			//second if else statement to distinguish if the user quit or not
+			if (number == -1)
+			{
+				System.out.println("The number was " +die1);
+				System.out.println("The number of tries:  "+ (counter));
+			}
+			else{
+			System.out.println("The number of tries:  "+ (counter+1)  );
+			}
+			System.out.println("Okay. Game Over.");
+			System.out.println("Have a great day.");
+		}
+	}
